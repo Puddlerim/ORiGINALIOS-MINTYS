@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FEA2E3F9-86BD-480C-8F63-93CAF56DB5FA}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispzaidimu_portalas\\zaidimuportalasmvc\\zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEA2E3F9-86BD-480C-8F63-93CAF56DB5FA}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 233,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-07T18:10:03.978Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
