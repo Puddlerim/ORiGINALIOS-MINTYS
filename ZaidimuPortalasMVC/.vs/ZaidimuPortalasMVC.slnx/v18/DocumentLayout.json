@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\",
+  "WorkspaceRootPath": "C:\\Users\\Namai\\OneDrive\\Documents\\GitHub\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEA2E3F9-86BD-480C-8F63-93CAF56DB5FA}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispzaidimu_portalas\\zaidimuportalasmvc\\zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEA2E3F9-86BD-480C-8F63-93CAF56DB5FA}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\namai\\onedrive\\documents\\github\\originalios-mintys\\zaidimuportalasmvc\\zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Namai\\OneDrive\\Documents\\GitHub\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Namai\\OneDrive\\Documents\\GitHub\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAkwAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-07T18:10:03.978Z",
               "EditorCaption": ""

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZaidimuPortalasMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da11ecf40abe059380a37952caf97c6e5ffd5ad0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZaidimuPortalasMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZaidimuPortalasMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
