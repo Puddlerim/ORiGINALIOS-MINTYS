@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\",
+  "WorkspaceRootPath": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEA2E3F9-86BD-480C-8F63-93CAF56DB5FA}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispzaidimu_portalas\\zaidimuportalasmvc\\zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEA2E3F9-86BD-480C-8F63-93CAF56DB5FA}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispgithubnetrinti\\originalios-mintys\\zaidimuportalasmvc\\zaidimuportalasmvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispgithubnetrinti\\originalios-mintys\\zaidimuportalasmvc\\zaidimuportalasmvc\\views\\home\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\views\\home\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispgithubnetrinti\\originalios-mintys\\zaidimuportalasmvc\\zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispgithubnetrinti\\originalios-mintys\\zaidimuportalasmvc\\zaidimuportalasmvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|c:\\users\\edasm\\desktop\\ispgithubnetrinti\\originalios-mintys\\zaidimuportalasmvc\\zaidimuportalasmvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9067CB0-B6E7-1722-0A68-0457743F6CE4}|ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj|solutionrelative:zaidimuportalasmvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,21 +30,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 233,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ZaidimuPortalasMVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T18:51:24.384Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Notifications.cshtml",
+              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Views\\Home\\Notifications.cshtml",
+              "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Views\\Home\\Notifications.cshtml",
+              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Views\\Home\\Notifications.cshtml",
+              "RelativeToolTip": "ZaidimuPortalasMVC\\Views\\Home\\Notifications.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T18:50:12.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "ZaidimuPortalasMVC\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-07T18:44:54.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ZaidimuPortalasMVC\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-07T18:44:35.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ZaidimuPortalasMVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAkwAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA7wBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-07T18:10:03.978Z",
               "EditorCaption": ""

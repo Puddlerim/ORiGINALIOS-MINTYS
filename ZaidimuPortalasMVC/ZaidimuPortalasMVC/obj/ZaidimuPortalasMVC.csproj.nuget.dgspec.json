@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj": {}
+    "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj": {
+    "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj",
+        "projectUniqueName": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj",
         "projectName": "ZaidimuPortalasMVC",
-        "projectPath": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj",
+        "projectPath": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC.csproj",
         "packagesPath": "C:\\Users\\edasm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edasm\\Desktop\\ISPZaidimu_portalas\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\obj\\",
+        "outputPath": "C:\\Users\\edasm\\Desktop\\ISPGITHUBNETRINTI\\ORiGINALIOS-MINTYS\\ZaidimuPortalasMVC\\ZaidimuPortalasMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
