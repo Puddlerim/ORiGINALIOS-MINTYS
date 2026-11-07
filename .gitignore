@@ -1,0 +1,12 @@
+# Visual Studio temporary files
+.vs/
+*.vsidx
+*.suo
+*.user
+
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Test results
+TestResults/
