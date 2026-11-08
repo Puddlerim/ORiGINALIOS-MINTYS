@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Mano žaidimų statistika";
+    ViewData["Title"] = "Asmeninio sąrašo statistika";
 }
 
 <div class="container mt-4">
@@ -7,20 +7,43 @@
     <h1>Mano žaidimų statistika</h1>
     <hr />
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h4>Minecraft</h4>
+    <p>Čia pateikiama viso asmeninio žaidimų sąrašo statistika.</p>
 
-            <p><strong>Žaidimo laikas:</strong> 120 val.</p>
-            <p><strong>Platforma:</strong> PC</p>
-            <p><strong>Žanras:</strong> Sandbox, Survival</p>
+    <div class="row mt-4">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Žaidimų skaičius</h5>
+                    <h2>1</h2>
+                </div>
+            </div>
         </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Bendras žaidimo laikas</h5>
+                    <h2>120 val.</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Vidutinis žaidimo laikas</h5>
+                    <h2>120 val.</h2>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <a asp-controller="PersonalList"
        asp-action="Index"
        class="btn btn-secondary mt-3">
-        Grįžti į mano žaidimus
+        Grįžti į mano žaidimų sąrašą
     </a>
 
 </div>

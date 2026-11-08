@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Asmeninio sąrašo redagavimas";
+}
+
+<div class="container mt-4">
+
+    <h1>Asmeninio žaidimų sąrašo redagavimas</h1>
+    <hr />
+
+    <p>Šiame puslapyje galite tvarkyti savo asmeninį žaidimų sąrašą.</p>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+
+            <h4>Minecraft</h4>
+
+            <p><strong>Platforma:</strong> PC</p>
+            <p><strong>Žaidimo laikas:</strong> 120 val.</p>
+
+            <button type="button" class="btn btn-danger">
+                Pašalinti iš sąrašo
+            </button>
+
+        </div>
+    </div>
+
+    <a asp-controller="PersonalList"
+       asp-action="Index"
+       class="btn btn-secondary mt-4">
+        Grįžti į mano žaidimų sąrašą
+    </a>
+
+</div>

@@ -10,6 +10,18 @@
 
     <p>Čia bus rodomi žaidimai, kuriuos pridėjote į savo sąrašą.</p>
 
+    <a asp-controller="PersonalList"
+       asp-action="Statistics"
+       class="btn btn-primary">
+        Statistika
+    </a>
+
+    <a asp-controller="PersonalList"
+       asp-action="Edit"
+       class="btn btn-warning">
+        Redaguoti
+    </a>
+
     <h3 class="mt-5">Mano žaidimai</h3>
 
     <div class="card mt-3 shadow-sm">
@@ -24,27 +36,9 @@
             <hr />
 
             <a asp-controller="PersonalList"
-               asp-action="Statistics"
-               class="btn btn-primary">
-                Statistika
-            </a>
-
-            <a asp-controller="PersonalList"
-               asp-action="Edit"
-               class="btn btn-warning">
-                Redaguoti
-            </a>
-
-            <a asp-controller="PersonalList"
                asp-action="PlayTime"
                class="btn btn-success">
                 Įvesti žaidimo laiką
-            </a>
-
-            <a asp-controller="PersonalList"
-               asp-action="Report"
-               class="btn btn-secondary">
-                Ataskaita
             </a>
 
         </div>

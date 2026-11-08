@@ -8,7 +8,18 @@ namespace ZaidimuPortalasMVC.Controllers
         {
             return View();
         }
+
         public IActionResult Statistics()
+        {
+            return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult PlayTime()
         {
             return View();
         }
