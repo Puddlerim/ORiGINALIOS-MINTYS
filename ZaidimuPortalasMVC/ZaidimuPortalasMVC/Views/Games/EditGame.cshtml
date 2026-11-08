@@ -1,0 +1,63 @@
+﻿@model ZaidimuPortalasMVC.Models.Game
+
+@{
+    ViewData["Title"] = "Redaguoti žaidimą";
+}
+
+<h1>Redaguoti žaidimą</h1>
+
+<form asp-action="EditGame" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Žaidimo pavadinimas</label>
+        <input asp-for="Pavadinimas" required />
+    </div>
+
+    <div>
+        <label>Aprašymas</label>
+        <textarea asp-for="Aprasymas" rows="5" required></textarea>
+    </div>
+
+    <div>
+        <label>Išleidimo data</label>
+        <input asp-for="IsleidimoData" type="date" required />
+    </div>
+
+    <div>
+        <label>Kūrėjas</label>
+        <input asp-for="Kurejas" required />
+    </div>
+
+    <div>
+        <label>Leidėjas</label>
+        <input asp-for="Leidejas" required />
+    </div>
+
+    <div>
+        <label>Amžiaus reitingas</label>
+        <input asp-for="AmziausReitingas" required />
+    </div>
+
+    <div>
+        <label>Žanrai (atskirti kableliais)</label>
+        <input name="Zanrai" value="@string.Join(", ", Model.Zanrai)" />
+    </div>
+
+    <div>
+        <label>Platformos (atskirti kableliais)</label>
+        <input name="Platformos" value="@string.Join(", ", Model.Platformos)" />
+    </div>
+
+    <br />
+
+    <button type="submit">Išsaugoti pakeitimus</button>
+
+</form>
+
+<br />
+
+<a asp-action="Details" asp-route-id="@Model.Id">Atšaukti</a>

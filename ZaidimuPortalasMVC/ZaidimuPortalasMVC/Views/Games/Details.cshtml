@@ -1,0 +1,68 @@
+﻿@model ZaidimuPortalasMVC.Models.Game
+
+@{
+    ViewData["Title"] = Model.Pavadinimas;
+}
+
+<a href="/Games/EditGame/@Model.Id">Redaguoti žaidimą</a>
+
+<h1>@Model.Pavadinimas</h1>
+
+<p>@Model.Aprasymas</p>
+
+<hr />
+
+<h3>Žaidimo informacija</h3>
+
+<p><strong>Kūrėjas:</strong> @Model.Kurejas</p>
+<p><strong>Leidėjas:</strong> @Model.Leidejas</p>
+<p><strong>Išleidimo data:</strong> @Model.IsleidimoData.ToShortDateString()</p>
+<p><strong>Amžiaus reitingas:</strong> @Model.AmziausReitingas</p>
+<p><strong>Žanrai:</strong> @string.Join(", ", Model.Zanrai)</p>
+<p><strong>Platformos:</strong> @string.Join(", ", Model.Platformos)</p>
+
+<hr />
+
+<a href="/Games">Grįžti į žaidimų katalogą</a>
+
+<hr />
+
+<a href="/Games/CreateReview/@Model.Id">
+    Rašyti atsiliepimą
+</a>
+
+<hr />
+
+<h2>Atsiliepimai</h2>
+
+@if (ViewBag.Reviews.Count == 0)
+{
+    <p>Šis žaidimas dar neturi atsiliepimų.</p>
+}
+else
+{
+    @foreach (var review in ViewBag.Reviews)
+    {
+        <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px;">
+            <h3>@review.Username</h3>
+
+            <p><strong>Įvertinimas:</strong> @review.Rating / 10</p>
+
+            <p>@review.Text</p>
+
+            <small>Parašyta: @review.CreatedAt.ToShortDateString()</small>
+            <br />
+
+            <a href="/Games/EditReview/@review.Id">
+                Redaguoti atsiliepimą
+            </a>
+
+            <br />
+
+            <a href="/Games/ReportReview/@review.Id">
+                Skųsti atsiliepimą
+            </a>
+
+        </div>
+    }
+}

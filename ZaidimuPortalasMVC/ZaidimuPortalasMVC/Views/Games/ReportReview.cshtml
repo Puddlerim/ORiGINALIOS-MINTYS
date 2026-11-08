@@ -1,0 +1,31 @@
+﻿@model ZaidimuPortalasMVC.Models.Complaint
+
+@{
+    ViewData["Title"] = "Skųsti atsiliepimą";
+}
+
+<h1>Skųsti atsiliepimą</h1>
+
+<form asp-action="ReportReview" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="ReviewId" />
+
+    <div style="margin-bottom: 15px;">
+        <label>Vartotojo vardas</label>
+        <input asp-for="Username" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label>Skundo priežastis</label>
+        <textarea asp-for="Reason" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Pateikti skundą</button>
+
+</form>
+
+<br />
+
+<a href="/Games">Grįžti į žaidimų katalogą</a>

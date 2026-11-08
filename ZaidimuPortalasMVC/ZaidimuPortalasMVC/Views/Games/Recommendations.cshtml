@@ -1,0 +1,30 @@
+﻿@model List<ZaidimuPortalasMVC.Models.Game>
+
+@{
+    ViewData["Title"] = "Rekomenduojami žaidimai";
+}
+
+<h1>Rekomenduojami žaidimai</h1>
+
+<p>Peržiūrėkite mūsų atrinktus rekomenduojamus žaidimus.</p>
+
+@foreach (var game in Model)
+{
+    <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px;">
+        <h2>@game.Pavadinimas</h2>
+
+        <p>@game.Aprasymas</p>
+
+        <p><strong>Kūrėjas:</strong> @game.Kurejas</p>
+
+        <p><strong>Žanrai:</strong> @string.Join(", ", game.Zanrai)</p>
+
+        <a href="/Games/Details/@game.Id">
+            Peržiūrėti žaidimą
+        </a>
+    </div>
+}
+
+<br />
+
+<a href="/Games">Grįžti į žaidimų katalogą</a>

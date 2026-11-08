@@ -1,0 +1,40 @@
+﻿@model ZaidimuPortalasMVC.Models.Review
+
+@{
+    ViewData["Title"] = "Rašyti atsiliepimą";
+}
+
+<h1>Rašyti atsiliepimą</h1>
+
+<h3>@Model.GameName</h3>
+
+<form asp-action="CreateReview" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="GameId" />
+
+    <div style="margin-bottom: 15px;">
+        <label>Vartotojo vardas</label>
+        <input asp-for="Username" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label>Įvertinimas (1–10)</label>
+        <input asp-for="Rating" type="number" min="1" max="10" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label>Atsiliepimas</label>
+        <textarea asp-for="Text" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Pateikti atsiliepimą</button>
+
+</form>
+
+<br />
+
+<a asp-action="Details" asp-route-id="@Model.GameId">
+    Grįžti į žaidimą
+</a>
