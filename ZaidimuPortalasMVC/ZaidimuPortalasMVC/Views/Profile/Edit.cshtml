@@ -44,8 +44,6 @@
             </div>
 
             <hr class="my-4" />
-            <p class="small text-muted">Tai prototipas. Pakeitimai nebus išsaugoti.</p>
-            <div id="save-message" class="alert alert-info" role="status" hidden></div>
             <div class="d-flex flex-wrap justify-content-end gap-2">
                 <a asp-controller="Profile" asp-action="Index" class="btn btn-outline-secondary">Atšaukti</a>
                 <button id="save-profile" type="button" class="btn btn-primary">Išsaugoti pakeitimus</button>
@@ -93,11 +91,6 @@
                 error.textContent = 'Nepavyko parodyti nuotraukos. Pasirinkite kitą failą.';
             });
 
-            document.getElementById('save-profile').addEventListener('click', () => {
-                const message = document.getElementById('save-message');
-                message.textContent = 'Tai tik peržiūra. Nuotrauka ir aprašymas nebuvo išsaugoti.';
-                message.hidden = false;
-            });
             window.addEventListener('pagehide', clearPreview);
         })();
     </script>
