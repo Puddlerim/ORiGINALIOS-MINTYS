@@ -1,0 +1,38 @@
+@model IReadOnlyList<FriendViewModel>
+@{
+    ViewData["Title"] = "Mano draugai";
+}
+
+<div class="container py-4" style="max-width: 850px;">
+    <h1>Mano draugai</h1>
+    <p class="text-muted">Jūsų draugų sąrašas · @Model.Count</p>
+
+    @if (TempData["FriendsSuccess"] is string message)
+    {
+        <div class="alert alert-success" role="status">@message</div>
+    }
+
+    @if (Model.Count == 0)
+    {
+        <div class="card p-4 text-center">
+            <h2 class="h5">Draugų sąrašas tuščias</h2>
+            <p class="text-muted mb-0">Šiuo metu draugų neturite.</p>
+        </div>
+    }
+    else
+    {
+        <ul class="list-group shadow-sm">
+            @foreach (var friend in Model)
+            {
+                <li class="list-group-item d-flex flex-wrap gap-3 align-items-center justify-content-between p-3">
+                    <div>
+                        <h2 class="h5 mb-1">@friend.DisplayName</h2>
+                        <span class="text-muted">@friend.Username</span>
+                    </div>
+                    <a asp-controller="Friends" asp-action="Remove" asp-route-id="@friend.Id"
+                       class="btn btn-outline-danger" aria-label="Pašalinti draugą: @friend.DisplayName">Pašalinti draugą</a>
+                </li>
+            }
+        </ul>
+    }
+</div>
