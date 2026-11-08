@@ -1,0 +1,75 @@
+@model ZaidimuPortalasMVC.Models.Complaint
+@using ZaidimuPortalasMVC.Models
+
+@{
+    ViewData["Title"] = "Skundų peržiūros langas";
+    var review = ViewBag.Review as Review;
+    var decision = (ComplaintDecision)ViewBag.Decision;
+}
+
+<h1>Skundų peržiūros langas</h1>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">Skundas #@Model.Id</div>
+            <div class="card-body">
+                <p><strong>Pateikė:</strong> @Model.Username</p>
+                <p><strong>Pateikimo data:</strong> @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")</p>
+                <p><strong>Priežastis:</strong><br />@Model.Reason</p>
+                <p><strong>Būsena:</strong> @decision.Busena</p>
+                @if (decision.SprendimoData != null)
+                {
+                    <p><strong>Sprendimo data:</strong> @decision.SprendimoData?.ToString("yyyy-MM-dd HH:mm")</p>
+                    <p><strong>Sprendimo komentaras:</strong> @decision.SprendimoKomentaras</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">Apskųstas atsiliepimas</div>
+            <div class="card-body">
+                @if (review == null)
+                {
+                    <p class="text-muted">Atsiliepimas nerastas (galbūt jau ištrintas).</p>
+                }
+                else
+                {
+                    <p><strong>Žaidimas:</strong> @review.GameName</p>
+                    <p><strong>Autorius:</strong> @review.Username</p>
+                    <p><strong>Įvertinimas:</strong> @review.Rating / 10</p>
+                    <p><strong>Paskelbimo data:</strong> @review.CreatedAt.ToString("yyyy-MM-dd")</p>
+                    <p><strong>Tekstas:</strong><br />@review.Text</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (decision.Busena == IrasoBusena.Priimtas)
+{
+    <div class="mt-4">
+        <label for="komentaras" class="form-label">Sprendimo komentaras (neprivalomas)</label>
+        <textarea id="komentaras" class="form-control" rows="2"
+                  oninput="document.querySelectorAll('.komentaras-laukas').forEach(e => e.value = this.value)"></textarea>
+    </div>
+
+    <div class="mt-3 d-flex gap-2">
+        <form asp-action="Approve" asp-route-id="@Model.Id" method="post"
+              onsubmit="return confirm('Patvirtinti skundą? Atsiliepimas bus ištrintas.');">
+            <input type="hidden" name="sprendimoKomentaras" class="komentaras-laukas" />
+            <button type="submit" class="btn btn-danger">Patvirtinti (ištrinti atsiliepimą)</button>
+        </form>
+
+        <form asp-action="Reject" asp-route-id="@Model.Id" method="post">
+            <input type="hidden" name="sprendimoKomentaras" class="komentaras-laukas" />
+            <button type="submit" class="btn btn-secondary">Atmesti</button>
+        </form>
+    </div>
+}
+
+<div class="mt-4">
+    <a asp-action="Index">← Grįžti į skundų sąrašą</a>
+</div>
