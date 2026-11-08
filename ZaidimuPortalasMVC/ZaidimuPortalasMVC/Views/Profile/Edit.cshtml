@@ -1,0 +1,104 @@
+@{
+    ViewData["Title"] = "Profilio redagavimas";
+}
+
+<div class="container py-4" style="max-width: 850px;">
+    <a asp-controller="Profile" asp-action="Index" class="d-inline-block mb-3">← Grįžti į profilį</a>
+    <h1 class="mb-2">Profilio redagavimas</h1>
+    <p class="text-muted mb-4">Atnaujinkite savo profilio nuotrauką ir aprašymą.</p>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <h2 class="h5 mb-3">Profilio nuotrauka</h2>
+                    <div id="avatar-placeholder" class="rounded-circle bg-light border d-flex align-items-center justify-content-center mx-auto mb-3"
+                         style="width: 150px; height: 150px;" role="img" aria-label="Numatytoji profilio nuotrauka">
+                        <svg width="90" height="90" viewBox="0 0 100 100" fill="currentColor" class="text-secondary" aria-hidden="true">
+                            <circle cx="50" cy="32" r="18" />
+                            <path d="M15 90c0-25 14-37 35-37s35 12 35 37Z" />
+                        </svg>
+                    </div>
+                    <img id="avatar-preview" alt="Pasirinktos profilio nuotraukos peržiūra"
+                         class="rounded-circle border mx-auto mb-3" width="150" height="150"
+                         style="object-fit: cover;" hidden />
+                    <p class="small text-muted">@User.Identity?.Name</p>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="mb-4">
+                        <label for="profile-picture" class="form-label fw-semibold">Pasirinkti naują nuotrauką</label>
+                        <input type="file" id="profile-picture" class="form-control" accept="image/jpeg,image/png,image/webp"
+                               aria-describedby="picture-help picture-error" />
+                        <div id="picture-help" class="form-text">JPG, PNG arba WebP. Iki 5 MB.</div>
+                        <div id="picture-error" class="text-danger small" role="alert"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profile-description" class="form-label fw-semibold">Aprašymas</label>
+                        <textarea id="profile-description" class="form-control" rows="6" maxlength="500"
+                                  placeholder="Papasakokite apie save ir mėgstamus žaidimus..."
+                                  aria-describedby="description-help"></textarea>
+                        <div id="description-help" class="form-text">Trumpai prisistatykite kitiems žaidėjams. Iki 500 simbolių.</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+            <p class="small text-muted">Tai prototipas. Pakeitimai nebus išsaugoti.</p>
+            <div id="save-message" class="alert alert-info" role="status" hidden></div>
+            <div class="d-flex flex-wrap justify-content-end gap-2">
+                <a asp-controller="Profile" asp-action="Index" class="btn btn-outline-secondary">Atšaukti</a>
+                <button id="save-profile" type="button" class="btn btn-primary">Išsaugoti pakeitimus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (() => {
+            const picker = document.getElementById('profile-picture');
+            const preview = document.getElementById('avatar-preview');
+            const placeholder = document.getElementById('avatar-placeholder');
+            const error = document.getElementById('picture-error');
+            let previewUrl;
+
+            function clearPreview() {
+                if (previewUrl) URL.revokeObjectURL(previewUrl);
+                previewUrl = undefined;
+                preview.hidden = true;
+                preview.removeAttribute('src');
+                placeholder.classList.remove('d-none');
+            }
+
+            picker.addEventListener('change', () => {
+                clearPreview();
+                error.textContent = '';
+                const file = picker.files[0];
+                if (!file) return;
+                if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
+                    error.textContent = 'Pasirinkite JPG, PNG arba WebP nuotrauką, ne didesnę nei 5 MB.';
+                    picker.value = '';
+                    return;
+                }
+                previewUrl = URL.createObjectURL(file);
+                preview.src = previewUrl;
+                preview.hidden = false;
+                placeholder.classList.add('d-none');
+            });
+
+            preview.addEventListener('error', () => {
+                clearPreview();
+                picker.value = '';
+                error.textContent = 'Nepavyko parodyti nuotraukos. Pasirinkite kitą failą.';
+            });
+
+            document.getElementById('save-profile').addEventListener('click', () => {
+                const message = document.getElementById('save-message');
+                message.textContent = 'Tai tik peržiūra. Nuotrauka ir aprašymas nebuvo išsaugoti.';
+                message.hidden = false;
+            });
+            window.addEventListener('pagehide', clearPreview);
+        })();
+    </script>
+}

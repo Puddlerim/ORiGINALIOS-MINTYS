@@ -8,5 +8,10 @@ namespace ZaidimuPortalasMVC.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
+        }
     }
 }
