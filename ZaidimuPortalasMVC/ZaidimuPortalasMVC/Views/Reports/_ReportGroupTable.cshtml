@@ -1,0 +1,48 @@
+@model List<ZaidimuPortalasMVC.Models.GameReportGroup>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">Duomenų nėra.</p>
+}
+else
+{
+    <table class="table table-sm table-hover align-middle">
+        <thead>
+            <tr>
+                <th>@ViewData["GroupTitle"]</th>
+                <th class="text-end">Žaidimų</th>
+                <th style="width: 25%">Dalis</th>
+                <th>Išleidimo laikotarpis</th>
+                <th>Žaidimai</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var g in Model)
+            {
+                <tr>
+                    <td><strong>@g.Pavadinimas</strong></td>
+                    <td class="text-end">@g.ZaidimuSkaicius</td>
+                    <td>
+                        <div class="progress" style="height: 18px;">
+                            <div class="progress-bar" role="progressbar"
+                                 style="width: @g.Dalis.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture)%">
+                                @g.Dalis.ToString("0")%
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        @if (g.SeniausiasIsleidimas.Year == g.NaujausiasIsleidimas.Year)
+                        {
+                            @g.SeniausiasIsleidimas.Year
+                        }
+                        else
+                        {
+                            @($"{g.SeniausiasIsleidimas.Year}–{g.NaujausiasIsleidimas.Year}")
+                        }
+                    </td>
+                    <td class="small">@string.Join(", ", g.Zaidimai)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

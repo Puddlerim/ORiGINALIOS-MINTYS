@@ -1,0 +1,99 @@
+@model ZaidimuPortalasMVC.Models.GameReportViewModel
+
+@{
+    ViewData["Title"] = "Žaidimų duomenų ataskaitos puslapis";
+}
+
+<div class="container mt-4">
+
+    <h1>Žaidimų duomenų ataskaita</h1>
+    <p class="text-muted">
+        Visi sistemos žaidimai, sugrupuoti pagal platformą, leidėją ir kūrėją.
+        Sugeneruota @Model.SugeneravimoData.ToString("yyyy-MM-dd HH:mm").
+    </p>
+
+    <hr />
+
+    <div class="row mt-3">
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Žaidimų</h5>
+                    <h2>@Model.VisoZaidimu</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Platformų</h5>
+                    <h2>@Model.PagalPlatforma.Count</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Leidėjų</h5>
+                    <h2>@Model.PagalLeideja.Count</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Kūrėjų</h5>
+                    <h2>@Model.PagalKureja.Count</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.VisoZaidimu == 0)
+    {
+        <div class="alert alert-info">Sistemoje nėra žaidimų, ataskaitos sudaryti negalima.</div>
+    }
+    else
+    {
+        <ul class="nav nav-tabs mt-3" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#platformos" type="button" role="tab">
+                    Pagal platformą
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#leidejai" type="button" role="tab">
+                    Pagal leidėją
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#kurejai" type="button" role="tab">
+                    Pagal kūrėją
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content border border-top-0 p-3 mb-3">
+            <div class="tab-pane fade show active" id="platformos" role="tabpanel">
+                <p class="small text-muted">Žaidimas, pasiekiamas keliose platformose, skaičiuojamas kiekvienoje iš jų.</p>
+                <partial name="_ReportGroupTable" model="Model.PagalPlatforma"
+                         view-data='new ViewDataDictionary(ViewData) { { "GroupTitle", "Platforma" } }' />
+            </div>
+            <div class="tab-pane fade" id="leidejai" role="tabpanel">
+                <partial name="_ReportGroupTable" model="Model.PagalLeideja"
+                         view-data='new ViewDataDictionary(ViewData) { { "GroupTitle", "Leidėjas" } }' />
+            </div>
+            <div class="tab-pane fade" id="kurejai" role="tabpanel">
+                <partial name="_ReportGroupTable" model="Model.PagalKureja"
+                         view-data='new ViewDataDictionary(ViewData) { { "GroupTitle", "Kūrėjas" } }' />
+            </div>
+        </div>
+    }
+
+    <a asp-controller="PersonalList"
+       asp-action="Index"
+       class="btn btn-secondary mt-3">
+        Grįžti į mano žaidimų sąrašą
+    </a>
+
+</div>
