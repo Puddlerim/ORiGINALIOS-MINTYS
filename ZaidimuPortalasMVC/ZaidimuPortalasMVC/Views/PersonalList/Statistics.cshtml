@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Mano žaidimų statistika";
+}
+
+<div class="container mt-4">
+
+    <h1>Mano žaidimų statistika</h1>
+    <hr />
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4>Minecraft</h4>
+
+            <p><strong>Žaidimo laikas:</strong> 120 val.</p>
+            <p><strong>Platforma:</strong> PC</p>
+            <p><strong>Žanras:</strong> Sandbox, Survival</p>
+        </div>
+    </div>
+
+    <a asp-controller="PersonalList"
+       asp-action="Index"
+       class="btn btn-secondary mt-3">
+        Grįžti į mano žaidimus
+    </a>
+
+</div>

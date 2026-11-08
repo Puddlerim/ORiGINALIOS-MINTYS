@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Mano žaidimų sąrašas";
+}
+
+<div class="container mt-4">
+
+    <h1>Mano žaidimų sąrašas</h1>
+
+    <hr />
+
+    <p>Čia bus rodomi žaidimai, kuriuos pridėjote į savo sąrašą.</p>
+
+    <h3 class="mt-5">Mano žaidimai</h3>
+
+    <div class="card mt-3 shadow-sm">
+        <div class="card-body">
+
+            <h4>Minecraft</h4>
+
+            <p>Žanras: Sandbox, Survival</p>
+            <p>Platforma: PC</p>
+            <p>Žaidimo laikas: 120 val.</p>
+
+            <hr />
+
+            <a asp-controller="PersonalList"
+               asp-action="Statistics"
+               class="btn btn-primary">
+                Statistika
+            </a>
+
+            <a asp-controller="PersonalList"
+               asp-action="Edit"
+               class="btn btn-warning">
+                Redaguoti
+            </a>
+
+            <a asp-controller="PersonalList"
+               asp-action="PlayTime"
+               class="btn btn-success">
+                Įvesti žaidimo laiką
+            </a>
+
+            <a asp-controller="PersonalList"
+               asp-action="Report"
+               class="btn btn-secondary">
+                Ataskaita
+            </a>
+
+        </div>
+    </div>
+
+    <div id="gamesList" class="row mt-3">
+    </div>
+</div>
