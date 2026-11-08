@@ -27,19 +27,39 @@
     <div class="card mt-3 shadow-sm">
         <div class="card-body">
 
-            <h4>Minecraft</h4>
+            @foreach (var game in Model)
+            {
+                <div class="card mt-3 shadow-sm">
+                    <div class="card-body">
 
-            <p>Žanras: Sandbox, Survival</p>
-            <p>Platforma: PC</p>
-            <p>Žaidimo laikas: 120 val.</p>
+                        <h4>@game.Pavadinimas</h4>
 
-            <hr />
+                        <p>
+                            <strong>Žanras:</strong>
+                            @string.Join(", ", game.Zanrai)
+                        </p>
 
-            <a asp-controller="PersonalList"
-               asp-action="PlayTime"
-               class="btn btn-success">
-                Įvesti žaidimo laiką
-            </a>
+                        <p>
+                            <strong>Platformos:</strong>
+                            @string.Join(", ", game.Platformos)
+                        </p>
+
+                        <p>
+                            <strong>Kūrėjas:</strong> @game.Kurejas
+                        </p>
+
+                        <hr />
+
+                        <a asp-controller="PersonalList"
+                           asp-action="PlayTime"
+                           asp-route-id="@game.Id"
+                           class="btn btn-success">
+                            Įvesti žaidimo laiką
+                        </a>
+
+                    </div>
+                </div>
+            }
 
         </div>
     </div>

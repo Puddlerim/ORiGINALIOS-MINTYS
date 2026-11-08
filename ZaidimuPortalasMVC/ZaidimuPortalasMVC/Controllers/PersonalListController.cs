@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ZaidimuPortalasMVC.Data;
 
 namespace ZaidimuPortalasMVC.Controllers
 {
@@ -6,22 +7,41 @@ namespace ZaidimuPortalasMVC.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var games = SampleData.Games
+                .Where(g => g.Id == 1 || g.Id == 2)
+                .ToList();
+
+            return View(games);
         }
 
         public IActionResult Statistics()
         {
-            return View();
+            var games = SampleData.Games
+                .Where(g => g.Id == 1 || g.Id == 2)
+                .ToList();
+
+            return View(games);
         }
 
         public IActionResult Edit()
         {
-            return View();
+            var games = SampleData.Games
+                .Where(g => g.Id == 1 || g.Id == 2)
+                .ToList();
+
+            return View(games);
         }
 
-        public IActionResult PlayTime()
+        public IActionResult PlayTime(int id)
         {
-            return View();
+            var game = SampleData.Games.FirstOrDefault(g => g.Id == id);
+
+            if (game == null)
+            {
+                return NotFound();
+            }
+
+            return View(game);
         }
     }
 }

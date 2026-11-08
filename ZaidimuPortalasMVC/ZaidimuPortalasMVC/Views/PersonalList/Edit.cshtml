@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ZaidimuPortalasMVC.Models.Game>
+@{
     ViewData["Title"] = "Asmeninio sąrašo redagavimas";
 }
 
@@ -9,20 +10,34 @@
 
     <p>Šiame puslapyje galite tvarkyti savo asmeninį žaidimų sąrašą.</p>
 
-    <div class="card shadow-sm mt-4">
-        <div class="card-body">
+    @foreach (var game in Model)
+    {
+        <div class="card shadow-sm mt-4">
+            <div class="card-body">
 
-            <h4>Minecraft</h4>
+                <h4>@game.Pavadinimas</h4>
 
-            <p><strong>Platforma:</strong> PC</p>
-            <p><strong>Žaidimo laikas:</strong> 120 val.</p>
+                <p>
+                    <strong>Žanras:</strong>
+                    @string.Join(", ", game.Zanrai)
+                </p>
 
-            <button type="button" class="btn btn-danger">
-                Pašalinti iš sąrašo
-            </button>
+                <p>
+                    <strong>Platformos:</strong>
+                    @string.Join(", ", game.Platformos)
+                </p>
 
+                <p>
+                    <strong>Kūrėjas:</strong> @game.Kurejas
+                </p>
+
+                <button type="button" class="btn btn-danger">
+                    Pašalinti iš sąrašo
+                </button>
+
+            </div>
         </div>
-    </div>
+    }
 
     <a asp-controller="PersonalList"
        asp-action="Index"

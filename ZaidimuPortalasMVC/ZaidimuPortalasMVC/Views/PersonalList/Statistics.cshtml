@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ZaidimuPortalasMVC.Models.Game>
+@{
     ViewData["Title"] = "Asmeninio sąrašo statistika";
 }
 
@@ -15,7 +16,7 @@
             <div class="card shadow-sm">
                 <div class="card-body text-center">
                     <h5>Žaidimų skaičius</h5>
-                    <h2>1</h2>
+                    <h2>@Model.Count</h2>
                 </div>
             </div>
         </div>
@@ -24,7 +25,7 @@
             <div class="card shadow-sm">
                 <div class="card-body text-center">
                     <h5>Bendras žaidimo laikas</h5>
-                    <h2>120 val.</h2>
+                    <h2>240 val.</h2>
                 </div>
             </div>
         </div>
