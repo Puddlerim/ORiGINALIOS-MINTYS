@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Žaidimų API sąsaja";
+}
+
+<div class="container mt-4">
+
+    <h1>Žaidimų API sąsaja</h1>
+    <hr />
+
+    <p>Šiame puslapyje galima valdyti žaidimų duomenų sinchronizavimą.</p>
+
+    <div class="card shadow-sm mt-4">
+
+        <div class="card-header">
+            <h4>RAWG žaidimų API</h4>
+        </div>
+
+        <div class="card-body">
+
+            <p><strong>Duomenų šaltinis:</strong> RAWG API</p>
+
+            <p><strong>Sinchronizavimo būsena:</strong> Nepradėta</p>
+
+            <p>
+                Sinchronizuojami žaidimų pavadinimai,
+                žanrai, platformos, kūrėjai ir leidėjai.
+            </p>
+
+            <button type="button"
+                    class="btn btn-primary"
+                    id="syncButton">
+                Sinchronizuoti žaidimus
+            </button>
+
+            <div id="syncResult" class="mt-3"></div>
+
+        </div>
+    </div>
+
+    <a asp-controller="Home"
+       asp-action="Index"
+       class="btn btn-secondary mt-3">
+        Grįžti į pagrindinį
+    </a>
+
+</div>
+
+<script>
+    document.getElementById("syncButton").addEventListener("click", function () {
+
+        document.getElementById("syncResult").innerHTML =
+            '<div class="alert alert-info">' +
+            'API sinchronizavimas tikrai įvyko.' +
+            '</div>';
+
+    });
+</script>

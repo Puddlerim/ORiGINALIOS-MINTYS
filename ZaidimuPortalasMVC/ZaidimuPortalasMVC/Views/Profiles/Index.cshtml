@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Naudotojų profiliai";
+}
+
+<div class="container mt-4">
+
+    <h1>Naudotojų profiliai</h1>
+    <hr />
+
+    <p>Čia galite peržiūrėti kitų žaidėjų profilius.</p>
+
+    <div class="row mt-4">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4>Gamer123</h4>
+                    <p>Žaidimų mėgėjas</p>
+
+                    <a asp-controller="Profiles"
+                       asp-action="Details"
+                       asp-route-id="Gamer123"
+                       class="btn btn-primary">
+                        Peržiūrėti profilį
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4>DarkSoul</h4>
+                    <p>RPG žaidimų mėgėjas</p>
+
+                    <a asp-controller="Profiles"
+                       asp-action="Details"
+                       asp-route-id="DarkSoul"
+                       class="btn btn-primary">
+                        Peržiūrėti profilį
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h4>Gamer456</h4>
+                    <p>Nuotykių žaidimų mėgėjas</p>
+
+                    <a asp-controller="Profiles"
+                       asp-action="Details"
+                       asp-route-id="Gamer456"
+                       class="btn btn-primary">
+                        Peržiūrėti profilį
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a asp-controller="Profile"
+       asp-action="Index"
+       class="btn btn-secondary mt-3">
+        Grįžti į mano profilį
+    </a>
+
+</div>

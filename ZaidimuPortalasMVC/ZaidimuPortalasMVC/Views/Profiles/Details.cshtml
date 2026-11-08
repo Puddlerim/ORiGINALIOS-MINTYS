@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Naudotojo profilis";
+}
+
+<div class="container mt-4">
+
+    <h1>Naudotojo profilis</h1>
+    <hr />
+
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+
+            <img src="https://ui-avatars.com/api/?name=@Uri.EscapeDataString((string)ViewBag.Username)&size=150"
+                 class="rounded-circle mb-3"
+                 width="150"
+                 height="150"
+                 alt="Profilio avataras" />
+
+            <h3>@ViewBag.Username</h3>
+
+            <p>Žaidimų portalo naudotojas</p>
+
+            <button type="button" class="btn btn-success" disabled>
+                Pridėti į draugus
+            </button>
+
+        </div>
+    </div>
+
+    <a asp-controller="Profiles"
+       asp-action="Index"
+       class="btn btn-secondary mt-3">
+        Grįžti į profilių sąrašą
+    </a>
+
+</div>

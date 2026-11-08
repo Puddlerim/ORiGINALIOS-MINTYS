@@ -1,0 +1,232 @@
+﻿@model ZaidimuPortalasMVC.Models.Game
+
+@{
+    ViewData["Title"] = "Savaitinis žaidimas";
+}
+
+<div class="container mt-4 text-center">
+
+    <h1>Savaitinis žaidimas</h1>
+    <hr />
+
+    <p>Atspėkite šios savaitės žaidimą per 6 bandymus!</p>
+
+    <div class="mb-4">
+        <strong>Žanrai:</strong> @string.Join(", ", Model.Zanrai)
+        <br />
+        <strong>Platformos:</strong> @string.Join(", ", Model.Platformos)
+    </div>
+
+    <!-- WORDLE LENTA -->
+    <div id="wordleBoard" class="wordle-board"></div>
+
+    <!-- SPĖJIMO ĮVEDIMAS -->
+    <div class="mt-4 mx-auto" style="max-width: 400px;">
+
+        <input type="text"
+               id="gameGuess"
+               class="form-control text-center"
+               placeholder="Įveskite žaidimo pavadinimą"
+               autocomplete="off" />
+
+        <button type="button"
+                id="checkGuess"
+                class="btn btn-success mt-3">
+            Spėti
+        </button>
+
+    </div>
+
+    <p id="result" class="mt-3 fw-bold"></p>
+
+    <a asp-controller="Home"
+       asp-action="Index"
+       class="btn btn-secondary mt-3">
+        Grįžti į pagrindinį
+    </a>
+
+</div>
+
+<style>
+    .wordle-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-top: 30px;
+    }
+
+    .wordle-row {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .wordle-cell {
+        width: 45px;
+        height: 45px;
+        border: 2px solid #d3d6da;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .wordle-correct {
+        background-color: #6aaa64;
+        border-color: #6aaa64;
+        color: white;
+    }
+
+    .wordle-present {
+        background-color: #c9b458;
+        border-color: #c9b458;
+        color: white;
+    }
+
+    .wordle-absent {
+        background-color: #787c7e;
+        border-color: #787c7e;
+        color: white;
+    }
+</style>
+
+<script>
+    const answer = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Pavadinimas));
+
+    // Tarpus ignoruojame
+    const normalizedAnswer = answer.replace(/\s/g, "").toUpperCase();
+
+    const maxAttempts = 6;
+    let currentAttempt = 0;
+    let gameFinished = false;
+
+    const board = document.getElementById("wordleBoard");
+    const input = document.getElementById("gameGuess");
+    const button = document.getElementById("checkGuess");
+    const result = document.getElementById("result");
+
+    // Sukuriame 6 eilutes
+    for (let row = 0; row < maxAttempts; row++) {
+
+        const rowDiv = document.createElement("div");
+        rowDiv.className = "wordle-row";
+
+        for (let col = 0; col < normalizedAnswer.length; col++) {
+
+            const cell = document.createElement("div");
+            cell.className = "wordle-cell";
+
+            rowDiv.appendChild(cell);
+        }
+
+        board.appendChild(rowDiv);
+    }
+
+    function updateCurrentRow() {
+
+        if (gameFinished || currentAttempt >= maxAttempts) return;
+
+        const guess = input.value.replace(/\s/g, "").toUpperCase();
+        const cells = board.children[currentAttempt].children;
+
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].textContent = guess[i] || "";
+        }
+    }
+
+    input.addEventListener("input", updateCurrentRow);
+
+    function checkGuess() {
+
+        if (gameFinished) return;
+
+        const guess = input.value.replace(/\s/g, "").toUpperCase();
+
+        if (guess.length !== normalizedAnswer.length) {
+            result.textContent =
+                "Pavadinimą turi sudaryti " +
+                normalizedAnswer.length + " raidės!";
+            result.className = "mt-3 fw-bold text-danger";
+            return;
+        }
+
+        const cells = board.children[currentAttempt].children;
+        const remaining = normalizedAnswer.split("");
+        const statuses = Array(guess.length).fill("absent");
+
+        // Pirma patikriname teisingas pozicijas
+        for (let i = 0; i < guess.length; i++) {
+            if (guess[i] === normalizedAnswer[i]) {
+                statuses[i] = "correct";
+                remaining[i] = null;
+            }
+        }
+
+        // Tada ieškome raidžių neteisingose pozicijose
+        for (let i = 0; i < guess.length; i++) {
+
+            if (statuses[i] === "correct") continue;
+
+            const index = remaining.indexOf(guess[i]);
+
+            if (index !== -1) {
+                statuses[i] = "present";
+                remaining[index] = null;
+            }
+        }
+
+        // Nuspalviname langelius
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].textContent = guess[i];
+            cells[i].classList.add("wordle-" + statuses[i]);
+        }
+
+        currentAttempt++;
+
+        // Laimėjimas
+        if (guess === normalizedAnswer) {
+
+            result.textContent =
+                "Sveikiname! Atspėjote žaidimą per " +
+                currentAttempt + " bandymus!";
+
+            result.className = "mt-3 fw-bold text-success";
+
+            finishGame();
+            return;
+        }
+
+        // Pralaimėjimas
+        if (currentAttempt >= maxAttempts) {
+
+            result.textContent =
+                "Bandymų nebeliko! Teisingas atsakymas: " + answer;
+
+            result.className = "mt-3 fw-bold text-danger";
+
+            finishGame();
+            return;
+        }
+
+        input.value = "";
+        result.textContent = "";
+        input.focus();
+    }
+
+    function finishGame() {
+        gameFinished = true;
+        input.disabled = true;
+        button.disabled = true;
+    }
+
+    button.addEventListener("click", checkGuess);
+
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            checkGuess();
+        }
+    });
+</script>
