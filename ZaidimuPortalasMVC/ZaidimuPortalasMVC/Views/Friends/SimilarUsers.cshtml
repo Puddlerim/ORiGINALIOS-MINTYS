@@ -1,0 +1,42 @@
+﻿@model List<ZaidimuPortalasMVC.Models.SimilarUserViewModel>
+
+@{
+    ViewData["Title"] = "Panašūs naudotojai";
+}
+
+<div class="container mt-4">
+
+    <h2>Panašūs naudotojai</h2>
+
+    <p>Naudotojai, turintys panašių žaidimų kaip jūs.</p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Naudotojas</th>
+                <th>Bendri žaidimai</th>
+                <th>Panašumas</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Username</td>
+
+                    <td>@user.CommonGames</td>
+
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar bg-success"
+                                 style="width: @(user.SimilarityPercentage.ToString(System.Globalization.CultureInfo.InvariantCulture))%">
+                                @user.SimilarityPercentage%
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

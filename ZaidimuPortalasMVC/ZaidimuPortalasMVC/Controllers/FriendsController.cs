@@ -67,4 +67,39 @@ public class FriendsController(
         ModelState.SetModelValue(nameof(model.Password), string.Empty, string.Empty);
         return View(model);
     }
+    [HttpGet]
+    public async Task<IActionResult> SimilarUsers()
+    {
+        var user = await userManager.GetUserAsync(User);
+        if (user is null) return Challenge();
+
+        // Sample data for testing
+        var similarUsers = new List<SimilarUserViewModel>
+    {
+        new()
+        {
+            Username = "GameMaster",
+            CommonGames = 8,
+            TotalGames = 10,
+            SimilarityPercentage = 80
+        },
+        new()
+        {
+            Username = "ProGamer",
+            CommonGames = 6,
+            TotalGames = 10,
+            SimilarityPercentage = 60
+        },
+        new()
+        {
+            Username = "Player123",
+            CommonGames = 4,
+            TotalGames = 10,
+            SimilarityPercentage = 40
+        }
+    };
+
+        return View(similarUsers.OrderByDescending(
+            u => u.SimilarityPercentage).ToList());
+    }
 }
