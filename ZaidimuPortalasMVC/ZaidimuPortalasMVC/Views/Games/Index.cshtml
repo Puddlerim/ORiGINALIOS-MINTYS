@@ -31,6 +31,24 @@
             <p><strong>Platformos:</strong> @string.Join(", ", game.Platformos)</p>
 
             <a href="/Games/Details/@game.Id">Peržiūrėti žaidimą</a>
+
+            <form asp-controller="PersonalList"
+                  asp-action="Add"
+                  method="post"
+                  style="margin-top: 10px;">
+
+                @Html.AntiForgeryToken()
+
+                <input type="hidden"
+                       name="gameId"
+                       value="@game.Id" />
+
+                <button type="submit" class="btn btn-success">
+                    Pridėti į asmeninį sąrašą
+                </button>
+
+            </form>
+
         </div>
     }
 </div>

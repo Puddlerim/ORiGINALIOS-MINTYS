@@ -30,10 +30,22 @@
                 <p>
                     <strong>Kūrėjas:</strong> @game.Kurejas
                 </p>
+                
+                <form asp-controller="PersonalList"
+                      asp-action="Remove"
+                      method="post">
 
-                <button type="button" class="btn btn-danger">
-                    Pašalinti iš sąrašo
-                </button>
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden"
+                           name="gameId"
+                           value="@game.Id" />
+
+                    <button type="submit" class="btn btn-danger">
+                        Pašalinti iš sąrašo
+                    </button>
+                </form>
+
 
             </div>
         </div>
